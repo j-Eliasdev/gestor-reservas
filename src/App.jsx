@@ -11,7 +11,7 @@ function App() {
       < BtnTheme/>
       <main className="bg:white flex items-center flex-col dark:bg-slate-950 min-h-screen">
         <HeroSection />
-        <div className=" md:w-8/12">
+        <div className=" md:w-8/12 w-full">
           <Routes>
             <Route path="/" element={<ServicesView />} />
             <Route path="/portfolio" element={<Portfolio />} />

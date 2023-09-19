@@ -1,19 +1,40 @@
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+
 export default function ServicesView() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_642jq9w",
+        "template_fnqb319",
+        form.current,
+        "w2JVhl7DhujQYMLE5"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
-    <section className="mx-8">
+    <section className="mx-8 md:mx-0">
       <h1 className="text-4xl my-10 text-black dark:text-white">
         Rellena tus datos
       </h1>
-      <form
-        action="https://formsubmit.co/elias013dr@gmail.com"
-        method="POST"
-        className="mb-48"
-      >
+      <form ref={form} onSubmit={sendEmail} className="mb-48">
         <div className="grid md:grid-cols-2 md:gap-6">
           <div className="relative z-0 w-full mb-6 group">
             <input
               type="text"
-              name="Nombre"
+              name="user_name"
               id="floating_first_name"
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
@@ -26,7 +47,7 @@ export default function ServicesView() {
           <div className="relative z-0 w-full mb-6 group">
             <input
               type="email"
-              name="Email"
+              name="user_email"
               id="floating_last_name"
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
@@ -86,7 +107,7 @@ export default function ServicesView() {
               Peluquero
             </label>
             <select
-            name="Peluquero"
+              name="Peluquero"
               id="countries"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             >
@@ -101,13 +122,14 @@ export default function ServicesView() {
           <textarea
             id="message"
             rows="4"
-            name="Mensaje"
+            name="message"
             className="block py-2.5 p-2 w-full text-sm text-gray-900 bg-transparent border-2 rounded-lg border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder="Deja un mensaje (Opcional)"
+            placeholder="Deja una nota (Opcional)"
           ></textarea>
         </div>
         <button
           type="submit"
+          value="Send"
           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           Submit
