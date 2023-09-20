@@ -27,7 +27,7 @@ export default function BtnTheme() {
     <button
       type="button"
       onClick={handleThemeSwitch}
-      className="absolute z-10 right-5 border-black dark:border-white top-5 border p-1 rounded-md"
+      className="static md:absolute z-10 right-5 border-black dark:border-white top-5 border p-1 rounded-md"
     >
       {theme === "dark" ? (
         <svg

@@ -36,9 +36,9 @@ export default function DetailsView() {
         <h1 className="text-4xl my-10 pt-6 border-gray-600 text-black dark:text-white border-t-2">
           Horarios
         </h1>
-        <div className="w-full md:w-1/2 ">
+        <div className="w-full lg:w-1/2 dark:text-white text-lg font-light italic">
           <div className="flex justify-between my-8">
-            <span>Lunes</span>
+            <span >Lunes</span>
             <span>09:00-13:00 - 16:00-20:00</span>
           </div>
           <div className="flex justify-between my-8">
