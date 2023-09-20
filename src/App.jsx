@@ -8,10 +8,12 @@ import BtnTheme from "./components/buttonMode";
 function App() {
   return (
     <>
-      < BtnTheme/>
       <main className="bg:white flex items-center flex-col dark:bg-slate-950 min-h-screen">
+        <div className="w-full flex justify-end mt-5 mr-16">
+          <BtnTheme />
+        </div>
         <HeroSection />
-        <div className=" md:w-8/12">
+        <div className=" md:w-8/12 w-full">
           <Routes>
             <Route path="/" element={<ServicesView />} />
             <Route path="/portfolio" element={<Portfolio />} />
