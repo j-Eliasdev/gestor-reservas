@@ -15,7 +15,7 @@ export default function HeroSection() {
           BarberShop
         </span>
         <p className="text-xl text-slate-500 dark:text-slate-400 mt-2 text-md">
-          Calle Tony Start, #2
+          Calle Tony Stark, #2
         </p>
       </div>
       <div className="bg-slate-200 dark:bg-slate-900 rounded-xl p-1 grid grid-cols-1 gap-4 sm:grid-cols-3 [&>a>span]:flex [&>a&>span]:items-center justify-between dark:text-white text-lg ">
